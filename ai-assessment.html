@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Readiness Assessment — Koshalyam</title>
+<meta name="description" content="Take Koshalyam's 5-question AI Readiness Assessment. Get a score, tier, and personalized program recommendations for your organization."/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+  <link rel="icon" type="image/png" href="logo-white.png">
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- ═══ AUTHORITY BANNER ═══ -->
+<div id="auth-banner">
+  <div class="wrap">
+    <div class="auth-inner">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span class="auth-pill"><span class="auth-dot"></span>Koshalyam Learning Solutions Pvt Ltd</span>
+        <span class="auth-tag">DPIIT Recognised Startup</span>
+        <span class="auth-tag">AI Capability Development Partner</span>
+      </div>
+      <div class="auth-right">
+        <span class="auth-pill">Indore, Madhya Pradesh, India</span>
+        <span class="auth-pill">Serving Global Organizations</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-wrap">
+      <a href="index.html" class="nav-logo-wrap">
+        <img src="logo-white.png" alt="Koshalyam" class="nav-logo-img">
+      </a>
+      <div class="nav-center"><a href="index.html" class="nav-a">Home</a><a href="about.html" class="nav-a">About</a><a href="programs.html" class="nav-a">Programs</a><a href="case-studies.html" class="nav-a">Case Studies</a><a href="research.html" class="nav-a">Research</a><a href="careers.html" class="nav-a">Careers</a><a href="contact.html" class="nav-a">Contact</a></div>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta">Schedule Consultation</a>
+        <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span style="width:12px"></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mob" id="mob-m"><a href="index.html" class="mob-a">Home</a><a href="about.html" class="mob-a">About</a><a href="programs.html" class="mob-a">Programs</a><a href="case-studies.html" class="mob-a">Case Studies</a><a href="research.html" class="mob-a">Research</a><a href="careers.html" class="mob-a">Careers</a><a href="contact.html" class="mob-a">Contact</a></div>
+
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="ph-eyebrow"><span class="t-label">AI Readiness Assessment</span></div>
+    <h1 class="t-hero ph-title">How AI-ready is<br>your <em>organization?</em></h1>
+    <p class="t-body-lg ph-sub">Five questions. A readiness score. Personalized program recommendations. Take the assessment to understand where your organization stands.</p>
+  </div>
+</section>
+<section class="section" id="readiness">
+  <div class="wrap">
+    <div class="r" style="text-align:center">
+      <span class="t-label" style="justify-content:center">AI Readiness Assessment</span>
+      <h2 class="t-section" style="color:var(--white);margin-top:var(--s3)">How AI-ready<br>is your organization?</h2>
+      <p class="t-body-lg" style="max-width:480px;margin:var(--s3) auto 0">Answer five questions. Receive your organization's AI readiness score and a personalized capability development recommendation.</p>
+    </div>
+    <div class="assess-wrap">
+      <div class="assess-box r">
+        <div class="assess-top">
+          <span class="assess-title-bar">AI Readiness Assessment</span>
+          <div class="assess-progress-wrap"><div class="assess-progress" id="assess-prog"></div></div>
+        </div>
+        <div id="assess-qs">
+          <div class="assess-body">
+            <div class="assess-q-meta">
+              <span class="assess-q-num" id="assess-q-num">Question 1 of 5</span>
+              <button class="assess-back" id="assess-back" style="display:none" onclick="assessBack()">← Back</button>
+            </div>
+            <div class="assess-q" id="assess-q-text">What type of organization are you?</div>
+            <div id="assess-opts"></div>
+          </div>
+        </div>
+        <div class="assess-result" id="assess-result">
+          <div class="assess-score-row">
+            <span class="assess-score-num" id="assess-score-num">0</span>
+            <div><div class="assess-score-label">AI Readiness Score</div></div>
+          </div>
+          <div class="assess-score-bar-wrap"><div class="assess-score-bar" id="assess-score-bar"></div></div>
+          <div class="assess-tier-label" id="assess-tier-label">Emerging</div>
+          <p class="assess-tier-desc" id="assess-tier-desc"></p>
+          <div class="assess-recs-hd">Recommended next steps</div>
+          <div id="assess-recs"></div>
+          <div class="assess-actions">
+            <a href="#contact" class="btn btn-k">Schedule AI Consultation <span class="btn-arr">→</span></a>
+            <button class="assess-reset" onclick="assessReset()">Retake Assessment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-brand-name">Koshalyam<span class="footer-brand-dot"></span></div>
+        <p class="footer-tagline">Preparing organizations for the age of Artificial Intelligence. India's AI Capability Development Partner — headquartered in Indore, Madhya Pradesh.</p>
+        <a href="https://techseekho.com" target="_blank" rel="noopener" class="footer-ts-link">TechSeekho Initiative ↗</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <a href="#" class="footer-ts-link">LinkedIn</a>
+          <a href="#" class="footer-ts-link">Twitter</a>
+        </div>
+        <div style="margin-top:20px"><span class="footer-dpiit">DPIIT Recognised Startup</span></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">Programs</div>
+        <ul class="footer-links">
+          <li><a href="programs.html">AI Fluency for Government</a></li>
+          <li><a href="programs.html">Corporate AI Productivity</a></li>
+          <li><a href="programs.html">AI for Teachers</a></li>
+          <li><a href="programs.html">AI for Manufacturing</a></li>
+          <li><a href="programs.html">AI Ethics &amp; Governance</a></li>
+          <li><a href="programs.html">AI for Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Koshalyam</a></li>
+          <li><a href="about.html#framework">AI Framework</a></li>
+          <li><a href="ai-index.html">AI Capability Index</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="research.html">Research Lab</a></li>
+          <li><a href="ai-assessment.html">AI Assessment</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">City Programs</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">AI Training · Indore</a></li>
+          <li><a href="contact.html">AI Training · Bhopal</a></li>
+          <li><a href="contact.html">AI Training · Dhar</a></li>
+          <li><a href="contact.html">AI Training · Ujjain</a></li>
+        </ul>
+        <div style="margin-top:28px">
+          <div class="footer-col-hd">TechSeekho</div>
+          <ul class="footer-links">
+            <li><a href="https://techseekho.com" target="_blank">School Programs</a></li>
+            <li><a href="https://techseekho.com" target="_blank">Partner with Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Koshalyam Learning Solutions Pvt Ltd · Indore, Madhya Pradesh, India</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <span class="footer-dpiit">AI Capability Institute</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ AI CHAT ═══ -->
+<button class="chat-fab" id="chat-fab" aria-label="AI Assistant">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-h">
+    <div class="chat-h-l">
+      <div class="chat-av">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4"/></svg>
+      </div>
+      <div>
+        <div class="chat-h-name">Koshalyam AI</div>
+        <div class="chat-h-st">Online — Ask about AI programs</div>
+      </div>
+    </div>
+    <button class="chat-close" id="chat-close" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs">
+    <div class="chat-msg"><div class="chat-bub ai">Welcome. I'm Koshalyam's AI assistant. I can help you identify the right AI capability program for your organization. What brings you here?</div></div>
+    <div class="chat-sugg-row">
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Government department AI training</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Corporate AI productivity training</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Take the AI Assessment</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">See open careers</button>
+    </div>
+  </div>
+  <div class="chat-inp-row">
+    <input class="chat-inp" id="chat-inp" type="text" placeholder="Ask about programs, industries, careers…"/>
+    <button class="chat-send" onclick="chatInputSend()">→</button>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

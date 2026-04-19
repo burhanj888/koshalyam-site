@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AI Capability Index™ — Koshalyam</title>
+<meta name="description" content="The Koshalyam AI Capability Index™ — a proprietary framework to measure organizational AI capability across Literacy, Productivity, Transformation, and Leadership."/>
+<meta name="robots" content="index, follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>.ph-title{max-width:900px}</style>
+  <link rel="icon" type="image/png" href="logo-white.png">
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- ═══ AUTHORITY BANNER ═══ -->
+<div id="auth-banner">
+  <div class="wrap">
+    <div class="auth-inner">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span class="auth-pill"><span class="auth-dot"></span>Koshalyam Learning Solutions Pvt Ltd</span>
+        <span class="auth-tag">DPIIT Recognised Startup</span>
+        <span class="auth-tag">AI Capability Development Partner</span>
+      </div>
+      <div class="auth-right">
+        <span class="auth-pill">Indore, Madhya Pradesh, India</span>
+        <span class="auth-pill">Serving Global Organizations</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="nav">
+  <div class="wrap">
+    <div class="nav-wrap">
+      <a href="index.html" class="nav-logo-wrap">
+        <img src="logo-white.png" alt="Koshalyam" class="nav-logo-img">
+      </a>
+      <div class="nav-center"><a href="index.html" class="nav-a">Home</a><a href="about.html" class="nav-a">About</a><a href="programs.html" class="nav-a">Programs</a><a href="case-studies.html" class="nav-a">Case Studies</a><a href="research.html" class="nav-a">Research</a><a href="careers.html" class="nav-a">Careers</a><a href="contact.html" class="nav-a">Contact</a></div>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-cta">Schedule Consultation</a>
+        <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span style="width:12px"></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mob" id="mob-m"><a href="index.html" class="mob-a">Home</a><a href="about.html" class="mob-a">About</a><a href="programs.html" class="mob-a">Programs</a><a href="case-studies.html" class="mob-a">Case Studies</a><a href="research.html" class="mob-a">Research</a><a href="careers.html" class="mob-a">Careers</a><a href="contact.html" class="mob-a">Contact</a></div>
+
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="ph-eyebrow"><span class="t-label">AI Capability Index™</span></div>
+    <h1 class="t-hero ph-title">Koshalyam AI<br>Capability <em>Index.™</em></h1>
+    <p class="t-body-lg ph-sub">Our proprietary measurement framework for organizational AI capability. Score your organization across four dimensions — AI Literacy, Productivity, Transformation, and Leadership.</p>
+  </div>
+</section>
+<section class="section" id="capability-index" style="background:var(--ink)">
+  <div class="wrap">
+    <div class="index-intro r">
+      <div>
+        <span class="t-label" style="margin-bottom:var(--s3);display:inline-block">The Signature Framework</span>
+        <h2 class="t-section" style="color:var(--white);font-family:var(--cg);font-weight:400;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.02em;margin-bottom:var(--s3)">Four dimensions.<br>One <em style="font-style:italic;color:var(--grey-2);font-weight:300">composite score.</em></h2>
+        <p class="t-body-lg" style="margin-bottom:var(--s4)">The AI Capability Index™ is used in every Koshalyam consulting engagement to baseline organizations, track transformation progress, and benchmark against industry peers.</p>
+        <p class="t-body" style="margin-bottom:var(--s5)">Move the sliders to see how your organization would score. Each dimension reflects a different aspect of AI readiness — moving from awareness (Literacy) through action (Productivity) to transformation and leadership.</p>
+        <a href="contact.html" class="nav-cta" style="padding:13px 28px">Get your organization scored →</a>
+      </div>
+      <div class="index-tool">
+        <div class="index-tool-hd">
+          <span class="index-tool-title">Live Calculator</span>
+        </div>
+        <div class="index-bars">
+          <div class="ib-col"><div class="ib-bar"><div id="ib-1" class="ib-fill" style="height:25%"></div></div><div class="ib-label">Literacy</div></div>
+          <div class="ib-col"><div class="ib-bar"><div id="ib-2" class="ib-fill" style="height:20%"></div></div><div class="ib-label">Productivity</div></div>
+          <div class="ib-col"><div class="ib-bar"><div id="ib-3" class="ib-fill" style="height:10%"></div></div><div class="ib-label">Transform</div></div>
+          <div class="ib-col"><div class="ib-bar"><div id="ib-4" class="ib-fill" style="height:15%"></div></div><div class="ib-label">Leadership</div></div>
+        </div>
+        <div class="index-score-row">
+          <span class="index-score" id="index-total">18</span>
+          <div><span class="index-score-l">Composite Score</span><div id="index-tier-name" class="index-tier">Emerging</div></div>
+        </div>
+        <div class="index-dims">
+          <div><div class="index-dim-row"><span class="index-dim-n">AI Literacy</span><span class="index-dim-v" id="iv-1">25</span></div><input type="range" class="index-slider" min="0" max="100" value="25" id="is-1" oninput="updateIndexCalc()"/></div>
+          <div><div class="index-dim-row"><span class="index-dim-n">AI Productivity</span><span class="index-dim-v" id="iv-2">20</span></div><input type="range" class="index-slider" min="0" max="100" value="20" id="is-2" oninput="updateIndexCalc()"/></div>
+          <div><div class="index-dim-row"><span class="index-dim-n">AI Transformation</span><span class="index-dim-v" id="iv-3">10</span></div><input type="range" class="index-slider" min="0" max="100" value="10" id="is-3" oninput="updateIndexCalc()"/></div>
+          <div><div class="index-dim-row"><span class="index-dim-n">AI Leadership</span><span class="index-dim-v" id="iv-4">15</span></div><input type="range" class="index-slider" min="0" max="100" value="15" id="is-4" oninput="updateIndexCalc()"/></div>
+        </div>
+        <div class="index-result">
+          <div class="index-result-t" id="index-result-tier">Emerging — AI Capability Stage</div>
+          <p class="index-result-d" id="index-result-desc">Foundational AI literacy is the priority.</p>
+          <div class="index-result-r" id="index-result-rec">Recommended: AI Literacy Workshop → AI Productivity Training</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-brand-name">Koshalyam<span class="footer-brand-dot"></span></div>
+        <p class="footer-tagline">Preparing organizations for the age of Artificial Intelligence. India's AI Capability Development Partner — headquartered in Indore, Madhya Pradesh.</p>
+        <a href="https://techseekho.com" target="_blank" rel="noopener" class="footer-ts-link">TechSeekho Initiative ↗</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <a href="#" class="footer-ts-link">LinkedIn</a>
+          <a href="#" class="footer-ts-link">Twitter</a>
+        </div>
+        <div style="margin-top:20px"><span class="footer-dpiit">DPIIT Recognised Startup</span></div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">Programs</div>
+        <ul class="footer-links">
+          <li><a href="programs.html">AI Fluency for Government</a></li>
+          <li><a href="programs.html">Corporate AI Productivity</a></li>
+          <li><a href="programs.html">AI for Teachers</a></li>
+          <li><a href="programs.html">AI for Manufacturing</a></li>
+          <li><a href="programs.html">AI Ethics &amp; Governance</a></li>
+          <li><a href="programs.html">AI for Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Koshalyam</a></li>
+          <li><a href="about.html#framework">AI Framework</a></li>
+          <li><a href="ai-index.html">AI Capability Index</a></li>
+          <li><a href="about.html#leadership">Leadership</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="research.html">Research Lab</a></li>
+          <li><a href="ai-assessment.html">AI Assessment</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-hd">City Programs</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">AI Training · Indore</a></li>
+          <li><a href="contact.html">AI Training · Bhopal</a></li>
+          <li><a href="contact.html">AI Training · Dhar</a></li>
+          <li><a href="contact.html">AI Training · Ujjain</a></li>
+        </ul>
+        <div style="margin-top:28px">
+          <div class="footer-col-hd">TechSeekho</div>
+          <ul class="footer-links">
+            <li><a href="https://techseekho.com" target="_blank">School Programs</a></li>
+            <li><a href="https://techseekho.com" target="_blank">Partner with Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Koshalyam Learning Solutions Pvt Ltd · Indore, Madhya Pradesh, India</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+      <span class="footer-dpiit">AI Capability Institute</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ AI CHAT ═══ -->
+<button class="chat-fab" id="chat-fab" aria-label="AI Assistant">
+  <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-h">
+    <div class="chat-h-l">
+      <div class="chat-av">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4"/></svg>
+      </div>
+      <div>
+        <div class="chat-h-name">Koshalyam AI</div>
+        <div class="chat-h-st">Online — Ask about AI programs</div>
+      </div>
+    </div>
+    <button class="chat-close" id="chat-close" aria-label="Close">
+      <svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="chat-msgs" id="chat-msgs">
+    <div class="chat-msg"><div class="chat-bub ai">Welcome. I'm Koshalyam's AI assistant. I can help you identify the right AI capability program for your organization. What brings you here?</div></div>
+    <div class="chat-sugg-row">
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Government department AI training</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Corporate AI productivity training</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">Take the AI Assessment</button>
+      <button class="chat-sugg" onclick="chatSuggSend(this)">See open careers</button>
+    </div>
+  </div>
+  <div class="chat-inp-row">
+    <input class="chat-inp" id="chat-inp" type="text" placeholder="Ask about programs, industries, careers…"/>
+    <button class="chat-send" onclick="chatInputSend()">→</button>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
