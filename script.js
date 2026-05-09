@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ── SCROLL REVEAL ── */
   const rvObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); e.target.addEventListener('transitionend', () => { e.target.style.willChange = 'auto'; }, { once: true }); } });
   }, { threshold: .06, rootMargin: '0px 0px -24px 0px' });
   document.querySelectorAll('.r').forEach(el => rvObs.observe(el));
 
@@ -204,13 +204,16 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   /* ── CLIENT TABS (homepage) ── */
-  window.showClientTab = function (i, btn) {
-    document.querySelectorAll('.c-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.c-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    const panels = document.querySelectorAll('.c-panel');
-    if (panels[i]) panels[i].classList.add('active');
-  };
+  const cTabs = document.querySelectorAll('.c-tab');
+  const cPanels = document.querySelectorAll('.c-panel');
+  cTabs.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      cTabs.forEach(t => t.classList.remove('active'));
+      cPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      if (cPanels[i]) cPanels[i].classList.add('active');
+    });
+  });
 
   /* ── VACANCY FILTER ── */
   window.filterVacancies = function (cat, btn) {
