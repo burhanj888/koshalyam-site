@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── NAV SCROLL ── */
   const nav = document.getElementById('nav');
   if (nav) {
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
   }
 
   /* ── MOBILE MENU ── */
@@ -215,6 +217,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* ── MICROLINK PREVIEW CARDS ── */
+  document.querySelectorAll('[data-microlink-url]').forEach(card => {
+    const url = card.dataset.microlinkUrl;
+    const skeleton = card.querySelector('.proof-preview-skeleton');
+    const img = card.querySelector('.proof-preview-img');
+    const titleEl = card.querySelector('.proof-preview-title');
+    const descEl = card.querySelector('.proof-preview-desc');
+    const imgWrap = card.querySelector('.proof-preview-img-wrap');
+
+    fetch('https://api.microlink.io/?url=' + encodeURIComponent(url))
+      .then(r => r.json())
+      .then(({ status, data }) => {
+        if (status !== 'success') { skeleton.style.display = 'none'; return; }
+        if (data.image && data.image.url) {
+          img.src = data.image.url;
+          img.onload = () => { skeleton.style.display = 'none'; img.style.display = 'block'; };
+          img.onerror = () => { skeleton.style.display = 'none'; };
+        } else {
+          skeleton.style.display = 'none';
+          if (imgWrap) imgWrap.style.display = 'none';
+        }
+        if (data.title && titleEl) titleEl.textContent = data.title;
+        if (data.description && descEl) descEl.textContent = data.description;
+      })
+      .catch(() => {
+        if (skeleton) skeleton.style.display = 'none';
+        if (imgWrap) imgWrap.style.display = 'none';
+      });
+  });
+
   /* ── VACANCY FILTER ── */
   window.filterVacancies = function (cat, btn) {
     document.querySelectorAll('.vf-btn').forEach(b => b.classList.remove('active'));
@@ -222,21 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.vac-row').forEach(v => {
       v.style.display = (cat === 'all' || v.dataset.cat === cat) ? '' : 'none';
     });
-  };
-
-  /* ── APPLY FOR ROLE (pre-fills dropdown) ── */
-  window.applyForRole = function (title) {
-    const sel = document.getElementById('role-select');
-    if (sel) {
-      for (let i = 0; i < sel.options.length; i++) {
-        if (sel.options[i].text === title) { sel.selectedIndex = i; break; }
-      }
-    }
-    const target = document.getElementById('apply-form');
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => target.focus(), 700);
-    }
   };
 
   /* ── FILE UPLOAD DISPLAY ── */

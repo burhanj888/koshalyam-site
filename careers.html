@@ -18,23 +18,6 @@
 <div id="cur"></div>
 <div id="cur-ring"></div>
 
-<!-- ═══ AUTHORITY BANNER ═══ -->
-<div id="auth-banner">
-  <div class="wrap">
-    <div class="auth-inner">
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-        <span class="auth-pill"><span class="auth-dot"></span>Koshalyam Learning Solutions Pvt Ltd</span>
-        <span class="auth-tag">DPIIT Recognised Startup</span>
-        <span class="auth-tag">AI Capability Development Partner</span>
-      </div>
-      <div class="auth-right">
-        <span class="auth-pill">Indore, Madhya Pradesh, India</span>
-        <span class="auth-pill">Serving Global Organizations</span>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ NAVIGATION ═══ -->
 <nav id="nav">
   <div class="wrap">
@@ -42,7 +25,7 @@
       <a href="index.html" class="nav-logo-wrap">
         <img src="logo-white.png" alt="Koshalyam" class="nav-logo-img">
       </a>
-      <div class="nav-center"><a href="index.html" class="nav-a">Home</a><a href="about.html" class="nav-a">About</a><a href="programs.html" class="nav-a">Programs</a><a href="case-studies.html" class="nav-a">Case Studies</a><a href="research.html" class="nav-a">Research</a><a href="careers.html" class="nav-a active">Careers</a><a href="contact.html" class="nav-a">Contact</a></div>
+      <div class="nav-center"><a href="index.html" class="nav-a">Home</a><a href="about.html" class="nav-a">About</a><a href="programs.html" class="nav-a">Programs</a><a href="careers.html" class="nav-a active">Careers</a><a href="contact.html" class="nav-a">Contact</a></div>
       <div class="nav-right">
         <a href="contact.html" class="nav-cta">Schedule Consultation</a>
         <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span style="width:12px"></span></button>
@@ -51,7 +34,7 @@
   </div>
 </nav>
 
-<div class="mob" id="mob-m"><a href="index.html" class="mob-a">Home</a><a href="about.html" class="mob-a">About</a><a href="programs.html" class="mob-a">Programs</a><a href="case-studies.html" class="mob-a">Case Studies</a><a href="research.html" class="mob-a">Research</a><a href="careers.html" class="mob-a">Careers</a><a href="contact.html" class="mob-a">Contact</a></div>
+<div class="mob" id="mob-m"><a href="index.html" class="mob-a">Home</a><a href="about.html" class="mob-a">About</a><a href="programs.html" class="mob-a">Programs</a><a href="careers.html" class="mob-a">Careers</a><a href="contact.html" class="mob-a">Contact</a></div>
 
 
 <section class="page-hero">
@@ -139,93 +122,29 @@
         </div>
       </div>
       <div class="r d2">
-        <div class="form-box" style="background:var(--white);padding:var(--s5)">
-          <div id="apply-success" class="f-success">
-            <span class="f-success-icon">✓</span>
-            <h3 class="f-success-title">Application Received.</h3>
-            <p class="f-success-sub">We review every application personally. Expect to hear from us within 5–7 working days.</p>
+        <div class="form-box" style="background:var(--ink-3);border:var(--b2);padding:var(--s5)">
+          <div style="margin-bottom:var(--s4)">
+            <span class="t-label" style="margin-bottom:var(--s3);display:inline-block">How to Apply</span>
+            <h3 style="font-family:var(--cg);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:400;color:var(--white);line-height:1.2;letter-spacing:-.02em;margin-bottom:var(--s3)">Send us an email.<br><em style="font-weight:300;color:var(--grey-2)">We read every one.</em></h3>
+            <p class="t-body-lg" style="margin-bottom:var(--s4)">Write to us at the address below. Include the role you're applying for, a brief note about yourself, and attach your resume.</p>
           </div>
-          <form id="apply-form-el" onsubmit="submitKoshalyamForm(event,'apply-form-el','apply-btn','apply-success')">
-            <span class="f-section-label">Personal Details</span>
-            <div class="f-row-2">
-              <div><label class="f-label">Full Name *</label><input class="f-in" type="text" placeholder="Priya Sharma" required/></div>
-              <div><label class="f-label">Email *</label><input class="f-in" type="email" placeholder="priya@email.com" required/></div>
-            </div>
-            <div class="f-row-2">
-              <div><label class="f-label">Phone</label><input class="f-in" type="tel" placeholder="+91 98765 43210"/></div>
-              <div><label class="f-label">City</label><input class="f-in" type="text" placeholder="Indore, MP"/></div>
-            </div>
-
-            <span class="f-section-label">Role &amp; Experience</span>
-            <div><label class="f-label">Position Applying For *</label>
-              <select class="f-in f-sel" id="role-select" required>
-                <option value="">Select a position</option>
-                <optgroup label="Training">
-                  <option>AI Trainer — Government Programs</option>
-                  <option>AI Trainer — Corporate Programs</option>
-                  <option>AI Trainer — Education Programs</option>
-                  <option>Senior AI Curriculum Designer</option>
-                </optgroup>
-                <optgroup label="Operations">
-                  <option>Program Coordinator</option>
-                  <option>Event &amp; Workshop Coordinator</option>
-                </optgroup>
-                <optgroup label="Business Development">
-                  <option>BD Executive — Government</option>
-                  <option>Partnerships Manager</option>
-                </optgroup>
-                <optgroup label="Content">
-                  <option>AI Content Writer</option>
-                  <option>Research Analyst</option>
-                </optgroup>
-                <optgroup label="TechSeekho">
-                  <option>TechSeekho School Trainer</option>
-                  <option>TechSeekho District Coordinator</option>
-                </optgroup>
-                <option>Other / Open Application</option>
-              </select>
-            </div>
-            <div><label class="f-label">Years of Experience</label>
-              <select class="f-in f-sel">
-                <option value="">Select</option>
-                <option>Fresher / Intern (0 years)</option>
-                <option>1–2 years</option>
-                <option>3–5 years</option>
-                <option>5–8 years</option>
-                <option>8+ years</option>
-              </select>
-            </div>
-            <div><label class="f-label">Current / Previous Organization</label><input class="f-in" type="text" placeholder="Company name or Fresher"/></div>
-            <div><label class="f-label">Why Koshalyam? Tell us about yourself. *</label><textarea class="f-in f-ta" placeholder="Tell us why you want to join Koshalyam, what excites you about AI capability development, and what you would bring to the team. Be direct and honest." required style="min-height:110px"></textarea></div>
-
-            <span class="f-section-label">Documents</span>
-            <div>
-              <label class="f-label">Resume / CV *</label>
-              <div class="file-upload">
-                <input type="file" id="resume-file" accept=".pdf,.doc,.docx" onchange="handleFileUpload(this,'resume-name')" required/>
-                <span class="fu-icon">📄</span>
-                <div class="fu-main">Click to upload or drag and drop</div>
-                <div class="fu-sub">PDF, DOC, DOCX · Max 5 MB</div>
+          <a href="mailto:careers@koshalyam.com?subject=Application — [Role Name]" class="nav-cta" style="display:inline-block;padding:14px 28px;font-size:.875rem;margin-bottom:var(--s4)">careers@koshalyam.com →</a>
+          <div style="border-top:var(--b1);padding-top:var(--s4);display:flex;flex-direction:column;gap:var(--s3)">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="font-size:1rem;flex-shrink:0">📄</span>
+              <div>
+                <div style="font-family:var(--sg);font-size:.8rem;font-weight:500;color:var(--white);margin-bottom:3px">What to include</div>
+                <p class="t-body">Role you're applying for · Your resume/CV · A brief note on why Koshalyam · LinkedIn or portfolio link (optional)</p>
               </div>
-              <div id="resume-name" class="fu-display"></div>
             </div>
-
-            <div>
-              <label class="f-label">Portfolio / Work Samples <span style="color:var(--grey-3);text-transform:none;letter-spacing:0">(Optional)</span></label>
-              <div class="file-upload">
-                <input type="file" id="portfolio-file" accept=".pdf,.ppt,.pptx,.doc,.docx,.zip" onchange="handleFileUpload(this,'portfolio-name')"/>
-                <span class="fu-icon">💼</span>
-                <div class="fu-main">Upload portfolio or work samples</div>
-                <div class="fu-sub">PDF, PPT, DOC, ZIP · Max 10 MB</div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="font-size:1rem;flex-shrink:0">⏱</span>
+              <div>
+                <div style="font-family:var(--sg);font-size:.8rem;font-weight:500;color:var(--white);margin-bottom:3px">Response time</div>
+                <p class="t-body">We review every application personally and respond within 5–7 working days.</p>
               </div>
-              <div id="portfolio-name" class="fu-display"></div>
             </div>
-
-            <div><label class="f-label">LinkedIn Profile <span style="color:var(--grey-3);text-transform:none;letter-spacing:0">(Optional)</span></label><input class="f-in" type="url" placeholder="https://linkedin.com/in/yourname"/></div>
-
-            <button type="submit" class="f-submit" id="apply-btn">Submit Application →</button>
-            <p class="f-note">All applications reviewed personally · Response within 5–7 working days</p>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -262,7 +181,7 @@ function renderVacancies(){
         '</div>'+
         '<p class="vac-desc">'+v.desc+'</p>'+
       '</div>'+
-      '<button class="vac-apply" onclick="applyForRole(\''+v.title+'\')">Apply →</button>'+
+      '<a class="vac-apply" href="mailto:careers@koshalyam.com?subject='+encodeURIComponent('Application — '+v.title)+'">Apply →</a>'+
     '</div>';
   }).join('');
 }
@@ -302,8 +221,8 @@ renderVacancies();
           <li><a href="about.html#framework">AI Framework</a></li>
           <li><a href="ai-index.html">AI Capability Index</a></li>
           <li><a href="about.html#leadership">Leadership</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="research.html">Research Lab</a></li>
+          <!-- <li><a href="case-studies.html">Case Studies</a></li> -->
+          <!-- <li><a href="research.html">Research Lab</a></li> -->
           <li><a href="ai-assessment.html">AI Assessment</a></li>
           <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -327,13 +246,13 @@ renderVacancies();
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 Koshalyam Learning Solutions Pvt Ltd · Indore, Madhya Pradesh, India</div>
+      <div class="footer-copy">© 2026 Koshalyam Learning Solutions Pvt Ltd · Indore, Madhya Pradesh, India</div>
       <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Sitemap</a>
+        <!-- <a href="#">Privacy Policy</a> -->
+        <!-- <a href="#">Terms of Use</a> -->
+        <!-- <a href="#">Sitemap</a> -->
       </div>
-      <span class="footer-dpiit">AI Capability Institute</span>
+      
     </div>
   </div>
 </footer>
